@@ -23,4 +23,4 @@ declare class WebpConverter {
     convertAllImgToWebp(options: IWebpOptions): Promise<void>;
     private formatOptions;
 }
-declare const converter: WebpConverter;
+declare let options: IWebpOptions;
