@@ -15,6 +15,12 @@ console.log(
   )
 );
 
+interface IWebpOptions {
+  quality?: number;
+  lossless?: boolean;
+  lossy?: boolean;
+}
+
 class FilteredFileReader {
   private extensions: string[];
 
@@ -47,11 +53,49 @@ class FilteredFileReader {
   }
 }
 
+class WebpConverter {
+  private fileReader: FilteredFileReader;
 
-const fileReader = new FilteredFileReader(['.png', '.jpg']);
+  constructor() {
+    this.fileReader = new FilteredFileReader(['.jpg', '.png']);
+  }
 
-fileReader.getFiles().then((resp: string[]) => {
-  console.log(resp);
+  public async convertAllImgToWebp(options: IWebpOptions): Promise<void> {
+    return new Promise((resolve, reject) => {
+      this.fileReader.getFiles()
+        .then(files => {
+          files.forEach((file: string) => {
+            let fileWOExt = file.replace(/\.[^/.]+$/, "");
+            webp.cwebp(file, `${fileWOExt}.webp`, this.formatOptions(options), (status: string, err: string) => {
+              if (status === '100') {
+                resolve();
+              } else {
+                reject(err);
+              }
+            })
+          })
+        }).catch(err => {
+          reject(err)
+        }); 
+    })
+  }
+
+  private formatOptions(options: IWebpOptions): string {
+    const optionArray: string[] = [];
+    if (options.quality) {
+      optionArray.push(`-q ${options.quality}`)
+    }
+    if (options.lossless) {
+      optionArray.push('-lossless');
+    }
+    return optionArray.join(' ')
+  }
+}
+
+const converter = new WebpConverter();
+
+converter.convertAllImgToWebp({
+  quality: 1,
 }).catch((err: string) => {
-  console.error(err)
+  console.error(chalk.red(err))
 })

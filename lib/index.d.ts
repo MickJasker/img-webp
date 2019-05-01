@@ -6,6 +6,11 @@ declare const path: any;
 declare const program: any;
 declare const webp: any;
 declare const fs: any;
+interface IWebpOptions {
+    quality?: number;
+    lossless?: boolean;
+    lossy?: boolean;
+}
 declare class FilteredFileReader {
     private extensions;
     constructor(extensions: string[]);
@@ -15,6 +20,7 @@ declare class FilteredFileReader {
 declare class WebpConverter {
     private fileReader;
     constructor();
-    convertImgToWebp(): Promise<void>;
+    convertAllImgToWebp(options: IWebpOptions): Promise<void>;
+    private formatOptions;
 }
-declare const fileReader: FilteredFileReader;
+declare const converter: WebpConverter;
