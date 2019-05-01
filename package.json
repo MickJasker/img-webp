@@ -11,7 +11,8 @@
     "create": "yarn build && yarn test",
     "build": "tsc",
     "test": "sudo npm i -g && img-webp",
-    "refresh": "rm -rf ./node_modules ./yarn.lock && yarn"
+    "refresh": "rm -rf ./node_modules ./yarn.lock && yarn",
+    "publish:npm": "yarn build && yarn publish"
   },
   "repository": "https://github.com/MickJasker/img-webp",
   "author": "Mick Jasker <mick.jasker@mediamonks.com>",
