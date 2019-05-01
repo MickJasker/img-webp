@@ -1,0 +1,9 @@
+{
+  "name": "img-webp",
+  "version": "0.1.0",
+  "description": "A tool to convert regular(png/jpg) to the webp format",
+  "main": "index.js",
+  "repository": "https://github.com/MickJasker/img-webp",
+  "author": "Mick Jasker <mick.jasker@mediamonks.com>",
+  "license": "MIT"
+}
