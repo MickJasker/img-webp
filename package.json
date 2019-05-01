@@ -1,10 +1,10 @@
 {
   "name": "img-webp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool to convert regular(png/jpg) to the webp format",
   "main": "lib/index.js",
   "bin": {
-    "img-webp": "index.js"
+    "img-webp": "lib/index.js"
   },
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
