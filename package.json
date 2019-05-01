@@ -21,6 +21,7 @@
     "clear": "^0.1.0",
     "commander": "^2.20.0",
     "figlet": "^1.2.1",
+    "fs": "^0.0.1-security",
     "inquirer": "^6.3.1",
     "path": "^0.12.7",
     "webp-converter": "^2.2.2"
