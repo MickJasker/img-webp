@@ -117,15 +117,14 @@ if (program.lossless) {
 if (program.quality || program.lossless) {
   const converter = new WebpConverter();
 
-converter
-  .convertAllImgToWebp(options).then(() => {
-    console.log(
-      chalk.green('Converted all images to webp images')
-    )
-  })
-  .catch((err: string) => {
-    console.error(chalk.red(err));
-  });
+  converter
+    .convertAllImgToWebp(options)
+    .then(() => {
+      console.log(chalk.green("Converted all images to webp images"));
+    })
+    .catch((err: string) => {
+      console.error(chalk.red(err));
+    });
 } else {
   program.outputHelp();
 }
