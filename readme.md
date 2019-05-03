@@ -9,3 +9,15 @@ The img-webp CLI converts all .png and .jpg's in the directory into the .webp fo
 ## Instalation
 
 ``` $ npm i -g img-webp ```
+
+## Usage example
+
+### Format all images to lossy compressed webp images with quality of 80.
+``` $ img-webp -q 80 ```
+
+### Format all images to lossless compressed webp images.
+``` $ img-webp -l ```
+
+### Get all options
+
+``` $ img-webp ```

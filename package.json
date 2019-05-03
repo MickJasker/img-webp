@@ -1,6 +1,6 @@
 {
   "name": "img-webp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A tool to convert regular(png/jpg) to the webp format",
   "main": "lib/index.js",
   "bin": {
