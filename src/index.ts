@@ -16,7 +16,7 @@ console.log(
 );
 
 program
-  .version("0.1.0")
+  .version("0.1.2")
   .description("A CLI to convert regular(png/jpg) images to the webp format")
   .option("-l, --lossless", "Output will be lossless. Default is lossy")
   .option("-q, --quality <float>", "Specify the quality")
